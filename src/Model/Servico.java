@@ -1,3 +1,5 @@
+package Model;
+
 public class Servico {
     //Declaração das array serviço
     public int indexServico = 0 ;//contador dos serviços
