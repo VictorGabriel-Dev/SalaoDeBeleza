@@ -1,24 +1,32 @@
 package View;
-import Model.Cliente;
+import Model.*;
+import Controller.*;
 import java.util.Scanner;
 
 public class View {
+    Controller controller;
     Scanner sc = new Scanner(System.in);
-    int index = 0;
 
-    //metodo menu inicial
-   /* System.out.pritnln("---------MENU INICIAL----------");
-    System.out.pritnln("Cadastrar Cliente");
-    System.out.pritnln("Cadastrar Serviço");
-    System.out.pritnln("Agendar atendimento"); */
+    public void CadastroCliente(){
+        System.out.println("----Cadastro Cliente----");
+        //quantos clientes vc quer cadastrar
+        int quantidade = sc.nextInt();
+        sc.nextLine();//para consumir nova linha
 
-    //medoto para cadastro cliente
-//    System.out.pritnln("-----Cadastro do Cliente-----");
-//    System.out.pritnln("Nome:");
-//    String nome = sc.nextLine();
+        for(int i=0; i<quantidade;i++) {
+            System.out.println("Nome:");
+            String nome = sc.nextLine();
+            controller.cadastrarCliente(nome);
+        }
+    }
 
-    public void print(String mensagem){
-        System.out.println(mensagem);
+
+    //ele vai imprimir array nomeCliente
+    public  void clienteCadastrados(String[] nomeCliente){
+        //loop para percorrer a array
+        for(int i=0; i< nomeCliente.length;i++){
+            System.out.println(nomeCliente[i]);
+        }
     }
 
 
