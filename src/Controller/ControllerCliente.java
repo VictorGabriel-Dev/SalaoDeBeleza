@@ -1,19 +1,21 @@
 package Controller;
-
 import Model.ClienteModel;
 import View.ClienteView;
+import java.util.Scanner;
 
 public class ControllerCliente {
-
+    Scanner sc = new Scanner(System.in);
+    String Entrada = sc.nextLine();
 
     ClienteView clienteView = new ClienteView();
+    public void imprimir;
 
-    // Chamando o método print
-       clienteView.CadastroCliente();
+
+    //public void imprima(String[] nomeCliente){}
+
 
     public void cadastrarCliente(String nome) {
-        ClienteModel clienteModel = new ClienteModel(nome);
-        clientes.add(clienteModel);
+        System.out.println(nome);
     }
 
 }
