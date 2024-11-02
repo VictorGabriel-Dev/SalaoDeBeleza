@@ -1,32 +1,19 @@
 package View;
-import Controller.*;
+//import Controller.*;
+import Controller.ControllerCliente;
+
 import java.util.Scanner;
 
 public class ClienteView {
-    ControllerCliente controllerCliente;
-    Scanner sc = new Scanner(System.in);
+    public static void imprimir(){
+        Scanner scanner = new Scanner(System.in);
 
-    public void CadastroCliente(){
         System.out.println("----Cadastro Cliente----");
-        //quantos clientes vc quer cadastrar
-        int quantidade = sc.nextInt();
-        sc.nextLine();//para consumir nova linha
+        System.out.println("Nome:");
 
-        for(int i=0; i<quantidade;i++) {
-            System.out.println("Nome:");
-            String nome = sc.nextLine();
-            controllerCliente.cadastrarCliente(nome);
-        }
+        String nome = scanner.nextLine();
+        //o construtor é necessario quando o metodo não é statico
+        ControllerCliente controllerCliente = new ControllerCliente();
+        controllerCliente.cadastrarCliente(nome);
     }
-
-
-    //ele vai imprimir array nomeCliente
-    public  void clienteCadastrados(String[] nomeCliente){
-        //loop para percorrer a array
-        for(int i=0; i< nomeCliente.length;i++){
-            System.out.println(nomeCliente[i]);
-        }
-    }
-
-
 }
