@@ -1,8 +1,12 @@
 import Controller.ControllerCliente;
-import View.ClienteView.*;
-public class Main {
+import View.ClienteView;
 
+public class Main {
     public static void main(String[]args){
-        controller.cadastrarCliente();
+        String nome = "";
+        ClienteView.imprimir();
+        ControllerCliente controllerCliente = new ControllerCliente();
+        controllerCliente.cadastrarCliente(nome);
     }
+
 }
