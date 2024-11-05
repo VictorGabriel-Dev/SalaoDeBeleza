@@ -1,32 +1,23 @@
 package Controller;
-import Model.ClienteModel;
+import Model.*;
 import View.ClienteView;
 import java.util.Scanner;
 
 public class ControllerCliente {
-    //metodo receber String
+    //metodo recebe entrada do usuario e
+    //envia para o Model
     public void recebe(){
         Scanner sc = new Scanner(System.in);
-        String valor = sc.nextLine();
-        //receba valor e envie para o model
-        //metodo model, envia valor para o model
-        ClienteModel clienteModel = new ClienteModel();
-        clienteModel.setValor(valor);
+        String nome = sc.nextLine();
+        Cliente cliente = new Cliente();
+        cliente.setNome(nome);//interessante isso
 
-        String recebeValor = clienteModel.getValor();
-        System.out.println(recebeValor);
+        //metodo que mostrar os dados armazenados
+        for(int i=0; i<3;i++){
+            //ele precisa imprir todos os valores dentro da array
+            String recebeValor = cliente.getNome();
+            System.out.println(recebeValor);
+        }
+
     }
-//    public void recebe1() {
-//        Scanner sc = new Scanner(System.in);
-//
-//        System.out.println("Digite o valor:");
-//        String valor = sc.nextLine();
-//
-//        // Envia o valor para o Model
-//        ClienteModel clienteModel = new ClienteModel();
-//        clienteModel.setValor(valor);
-//
-//        System.out.println("Valor enviado para o Model: " + valor);
-//    }
-
 }
